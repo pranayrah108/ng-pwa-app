@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { UpdateCheckService } from './components/services/update-check.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,4 +13,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class AppComponent {
   title = 'students-details-pwa';
+  constructor( private updateCheckService: UpdateCheckService ){
+    this.updateCheckService.checkForUpdate();
+  }
 }
